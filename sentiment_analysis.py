@@ -42,8 +42,6 @@ import matplotlib.pyplot as plt
 from google.colab import drive
 drive.mount('/content/drive')
 
-data = pd.read_csv('/content/drive/MyDrive/Data Analyst/FP Data Mining/dataset_fp.csv')
-
 data = pd.read_csv('/content/dataset_fp.csv')
 
 data.head()
@@ -101,8 +99,6 @@ data.to_csv('cleaned_data.csv', index=False)
 
 """#Convert Bahasa"""
 
-data = pd.read_csv('/content/drive/MyDrive/Data Analyst/FP Data Mining/cleaned_data.csv')
-
 data = pd.read_csv('/content/cleaned_data.csv')
 data.head()
 
@@ -135,9 +131,6 @@ print(f"File dengan kolom sentimen berhasil disimpan di {output_file}")
 data.head()
 
 """#Pelabelan"""
-
-data = pd.read_csv('/content/drive/MyDrive/Data Analyst/FP Data Mining/translated_data.csv')
-data.head()
 
 data = pd.read_csv('/content/translated_data.csv')
 data.head()
@@ -449,9 +442,6 @@ from nltk.stem import PorterStemmer
 data = pd.read_csv('/content/final_sentiment_data.csv')
 data.head()
 
-data = pd.read_csv('/content/drive/MyDrive/Data Analyst/FP Data Mining/final_sentiment_data.csv')
-data.head()
-
 """##Text Cleaning"""
 
 def clean_text(text):
@@ -482,7 +472,7 @@ print(comparison_tokenized_df.head(10))
 
 """##Normalisasi"""
 
-normalizad_word = pd.read_csv('/content/drive/MyDrive/Data Analyst/FP Data Mining/kamusalay.csv', header=None)  # Memuat kamus alay (file .csv kamus normalisasi)
+normalizad_word = pd.read_csv('/content/kamusalay.csv', header=None)  # Memuat kamus alay (file .csv kamus normalisasi)
 normalizad_word_dict = {row[0]: row[1] for _, row in normalizad_word.iterrows()}  # Membuat kamus normalisasi dari csv
 
 def normalize_term(tokens):
@@ -543,8 +533,6 @@ data = pd.read_csv('/content/final_dataset.csv')
 data.head()
 
 import pandas as pd
-data = pd.read_csv('/content/drive/MyDrive/Data Analyst/FP Data Mining/final_dataset.csv')
-data.head()
 
 data = data[data['final_sentiment'] != 'netral']
 data = data[data['final_sentiment'] != 'equal']
